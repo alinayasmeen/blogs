@@ -196,7 +196,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import CommentsSection from "@/components/Comments";
-import { client } from "@/sanity/lib/client";
+// import { client } from "@/sanity/lib/client";
 
 export interface Blog {
   title: string;
@@ -209,19 +209,19 @@ export interface Blog {
   slug: string;
 }
 
-export const getBlogs = async () => {
-  const res = await client.fetch(`*[_type == 'blogs'] | order(_createdAt asc) {
-description,
-title,
-postImage {
-  asset -> {
-    url
-  }
-},
-"slug": slug.current
-}[0...3]`);
-  return res;
-};
+// export const getBlogs = async () => {
+//   const res = await client.fetch(`*[_type == 'blogs'] | order(_createdAt asc) {
+// description,
+// title,
+// postImage {
+//   asset -> {
+//     url
+//   }
+// },
+// "slug": slug.current
+// }[0...3]`);
+//   return res;
+// };
 
 const HomePage = () => {
   const reviews = [
